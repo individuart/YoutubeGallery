@@ -1,9 +1,9 @@
 <?php
 
-namespace Taema\Youtubegallery\Tests\Models;
+namespace Individuart\Videogallery\Tests\Models;
 
 use Illuminate\Foundation\Testing\TestCase;
-use Taema\Youtubegallery\Models\Video;
+use Individuart\Videogallery\Models\Video;
 
 class VideoTest extends TestCase
 {

@@ -1,17 +1,14 @@
 <?php
 
-namespace taema\youtubegallery\tests\controllers;
+namespace individuart\videogallery\tests\controllers;
 
 use PluginTestCase;
-use Taema\Youtubegallery\Controllers\Playlists;
+use Individuart\Videogallery\Controllers\Playlists;
 
 /**
  * Class PlaylistsTest
  *
- * @package taema\youtubegallery\tests\controllers
- *
- * @author Mathieu Tanguay <mathieu.tanguay@taema.ca>
- * @copyright Taema Inc.
+ * @package individuart\videogallery\tests\controllers
  */
 class PlaylistsTest extends PluginTestCase
 {

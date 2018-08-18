@@ -1,19 +1,17 @@
 <?php
 
-namespace taema\youtubegallery\tests\components;
+namespace individuart\videogallery\tests\components;
 
-use Taema\Youtubegallery\Components\SinglePlaylist;
+use Individuart\Videogallery\Components\SinglePlaylist;
 use PluginTestCase;
-use Taema\Youtubegallery\Models\Playlist;
-use Taema\Youtubegallery\Models\Video;
+use Individuart\Videogallery\Models\Playlist;
+use Individuart\Videogallery\Models\Video;
 
 /**
  * Class VideoListTest
  *
- * @package taema\youtubegallery\tests\components
+ * @package individuart\videogallery\tests\components
  *
- * @author Taema Inc. <mathieu.tanguay@taema.ca>
- * @copyright Taema Inc.
  */
 class SinglePlaylistTest extends PluginTestCase
 {

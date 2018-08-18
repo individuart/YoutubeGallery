@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/taema/youtubegallery/models/video/columns.yaml
+list: $/individuart/videogallery/models/video/columns.yaml
 
 # Model Class name
-modelClass: Taema\Youtubegallery\Models\Video
+modelClass: Individuart\Videogallery\Models\Video
 
 # List Title
 title: Manage Videos
 
 # Link URL for each record
-recordUrl: taema/youtubegallery/videos/update/:id
+recordUrl: individuart/videogallery/videos/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

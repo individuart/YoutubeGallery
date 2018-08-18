@@ -1,8 +1,8 @@
-<?php namespace Taema\Youtubegallery\Components;
+<?php namespace Individuart\Videogallery\Components;
 
 use Cms\Classes\ComponentBase;
-use Taema\Youtubegallery\Models\Playlist;
-use Taema\Youtubegallery\Models\Video;
+use Individuart\Videogallery\Models\Playlist;
+use Individuart\Videogallery\Models\Video;
 
 class SinglePlaylist extends ComponentBase
 {

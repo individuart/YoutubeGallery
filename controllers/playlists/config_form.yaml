@@ -3,28 +3,28 @@
 # ===================================
 
 # Record name
-name: taema.youtubegallery::lang.plugin.controllers.playlists.name
+name: individuart.videogallery::lang.plugin.controllers.playlists.name
 
 # Model Form Field configuration
-form: $/taema/youtubegallery/models/playlist/fields.yaml
+form: $/individuart/videogallery/models/playlist/fields.yaml
 
 # Model Class name
-modelClass: Taema\Youtubegallery\Models\Playlist
+modelClass: Individuart\Videogallery\Models\Playlist
 
 # Default redirect location
-defaultRedirect: taema/youtubegallery/playlists
+defaultRedirect: individuart/videogallery/playlists
 
 # Create page
 create:
-    title: taema.youtubegallery::lang.plugin.controllers.playlists.create.title
-    redirect: taema/youtubegallery/playlists/update/:id
-    redirectClose: taema/youtubegallery/playlists
+    title: individuart.videogallery::lang.plugin.controllers.playlists.create.title
+    redirect: individuart/videogallery/playlists/update/:id
+    redirectClose: individuart/videogallery/playlists
 
 # Update page
 update:
-    title: taema.youtubegallery::lang.plugin.controllers.playlists.update.title
-    redirect: taema/youtubegallery/playlists
-    redirectClose: taema/youtubegallery/playlists
+    title: individuart.videogallery::lang.plugin.controllers.playlists.update.title
+    redirect: individuart/videogallery/playlists
+    redirectClose: individuart/videogallery/playlists
 
 # Preview page
 preview:

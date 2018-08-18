@@ -1,6 +1,6 @@
 <?php
 
-namespace Taema\Youtubegallery\Updates;
+namespace Individuart\Videogallery\Updates;
 
 use Schema;
 use October\Rain\Database\Schema\Blueprint;
@@ -10,7 +10,7 @@ class CreatePlaylistVideoTable extends Migration
 {
     public function up()
     {
-        Schema::create('taema_youtubegallery_playlist_video', function(Blueprint $table) {
+        Schema::create('individuart_videogallery_playlist_video', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedInteger('playlist_id');
@@ -21,6 +21,6 @@ class CreatePlaylistVideoTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('taema_youtubegallery_playlist_video');
+        Schema::dropIfExists('individuart_videogallery_playlist_video');
     }
 }

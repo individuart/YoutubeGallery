@@ -12,7 +12,7 @@ return [
     ],
     'plugin' => [
         'navigation' => [
-            'label' => 'YT Gallery',
+            'label' => 'VideoGallery',
             'sidemenu' => [
                 'videos' => [
                     'label' => 'Videos'
@@ -69,6 +69,8 @@ return [
                 'fields' => [
                     'title' => 'Video title',
                     'yt_watch' => 'YouTube Video ID',
+                    'idvideo' => 'Video ID',
+                    'video_type' => 'Video Type',
                     'published' => 'Published',
                     'order' => 'Video display priority in playlists'
                 ],

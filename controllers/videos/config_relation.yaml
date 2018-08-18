@@ -3,10 +3,10 @@
 # ===================================
 
 playlists:
-    label: taema.youtubegallery::lang.plugin.controllers.playlists.relation.label
+    label: individuart.videogallery::lang.plugin.controllers.playlists.relation.label
     view:
-        list: $/taema/youtubegallery/models/playlist/columns.yaml
+        list: $/individuart/videogallery/models/playlist/columns.yaml
         toolbarButtons: add|remove
     manage:
-        list: $/taema/youtubegallery/models/playlist/columns.yaml
+        list: $/individuart/videogallery/models/playlist/columns.yaml
         recordsPerPage: 10

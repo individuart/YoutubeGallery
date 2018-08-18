@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/taema/youtubegallery/models/playlist/columns.yaml
+list: $/individuart/videogallery/models/playlist/columns.yaml
 
 # Model Class name
-modelClass: Taema\Youtubegallery\Models\Playlist
+modelClass: Individuart\Videogallery\Models\Playlist
 
 # List Title
 title: Manage Playlists
 
 # Link URL for each record
-recordUrl: taema/youtubegallery/playlists/update/:id
+recordUrl: individuart/videogallery/playlists/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

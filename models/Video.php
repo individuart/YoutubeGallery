@@ -1,6 +1,6 @@
 <?php
 
-namespace Taema\Youtubegallery\Models;
+namespace Individuart\Videogallery\Models;
 
 use Model;
 use October\Rain\Database\Traits\Validation;
@@ -15,7 +15,7 @@ class Video extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'taema_youtubegallery_videos';
+    public $table = 'individuart_videogallery_videos';
 
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 
@@ -29,17 +29,17 @@ class Video extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = ['title', 'yt_watch', 'published'];
+    protected $fillable = ['title', 'idvideo', 'published'];
 
     public $rules = [
         'title' => 'required',
-        'yt_watch' => 'required',
+        'idvideo' => 'required',
         'published' => 'boolean'
     ];
 
     public $attributeNames = [
-        'title' => 'taema.youtubegallery::lang.plugin.models.video.attributes.title',
-        'yt_watch' => 'taema.youtubegallery::lang.plugin.models.video.attributes.yt_watch'
+        'title' => 'individuart.videogallery::lang.plugin.models.video.attributes.title',
+        'yt_watch' => 'individuart.videogallery::lang.plugin.models.video.attributes.yt_watch'
     ];
 
     /**
@@ -67,17 +67,35 @@ class Video extends Model
     public $belongsToMany = [
         'playlists' => [
             Playlist::class,
-            'table' => 'taema_youtubegallery_playlist_video'
+            'table' => 'individuart_videogallery_playlist_video'
         ],
         'playlists_count' => [
             Playlist::class,
-            'table' => 'taema_youtubegallery_playlist_video',
+            'table' => 'individuart_videogallery_playlist_video',
             'count' => true
         ]
     ];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
-    public $attachOne = [];
+    public $attachOne = [
+        'video_image' => ['System\Models\File']
+    ];
     public $attachMany = [];
+
+
+    public function getImageAttribute()
+    {
+        $item = Video::find($this->id);
+        if ($item->video_image) {
+            return '<img src="' . $item->video_image->getThumb(50, 50, 'crop') . '">';
+        } else {
+            return '';
+        }
+    }
+
+    public function getVideoTypeOptions($value, $formData)
+    {
+        return [1 => 'Youtube', 2 => 'Vimeo'];
+    }
 }

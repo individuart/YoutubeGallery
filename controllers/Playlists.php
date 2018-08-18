@@ -1,4 +1,4 @@
-<?php namespace Taema\Youtubegallery\Controllers;
+<?php namespace Individuart\Videogallery\Controllers;
 
 use BackendMenu;
 use Backend\Classes\Controller;
@@ -22,6 +22,6 @@ class Playlists extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Taema.Youtubegallery', 'youtubegallery', 'playlists');
+        BackendMenu::setContext('Individuart.Videogallery', 'videogallery', 'playlists');
     }
 }

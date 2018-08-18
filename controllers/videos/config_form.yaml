@@ -3,28 +3,28 @@
 # ===================================
 
 # Record name
-name: taema.youtubegallery::lang.plugin.controllers.videos.name
+name: individuart.videogallery::lang.plugin.controllers.videos.name
 
 # Model Form Field configuration
-form: $/taema/youtubegallery/models/video/fields.yaml
+form: $/individuart/videogallery/models/video/fields.yaml
 
 # Model Class name
-modelClass: Taema\Youtubegallery\Models\Video
+modelClass: Individuart\Videogallery\Models\Video
 
 # Default redirect location
-defaultRedirect: taema/youtubegallery/videos
+defaultRedirect: individuart/videogallery/videos
 
 # Create page
 create:
-    title: taema.youtubegallery::lang.plugin.controllers.videos.create.title
-    redirect: taema/youtubegallery/videos/update/:id
-    redirectClose: taema/youtubegallery/videos
+    title: individuart.videogallery::lang.plugin.controllers.videos.create.title
+    redirect: individuart/videogallery/videos/update/:id
+    redirectClose: individuart/videogallery/videos
 
 # Update page
 update:
-    title: taema.youtubegallery::lang.plugin.controllers.videos.update.title
-    redirect: taema/youtubegallery/videos
-    redirectClose: taema/youtubegallery/videos
+    title: individuart.videogallery::lang.plugin.controllers.videos.update.title
+    redirect: individuart/videogallery/videos
+    redirectClose: individuart/videogallery/videos
 
 # Preview page
 preview:

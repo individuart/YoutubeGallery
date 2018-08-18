@@ -8,5 +8,5 @@ fields:
         disabled: true
         span: left
     name:
-        label: taema.youtubegallery::lang.plugin.models.playlist.fields.name
+        label: individuart.videogallery::lang.plugin.models.playlist.fields.name
         span: left

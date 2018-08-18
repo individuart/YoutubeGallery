@@ -1,17 +1,15 @@
 <?php
 
-namespace taema\youtubegallery\tests\controllers;
+namespace individuart\videogallery\tests\controllers;
 
 use PluginTestCase;
-use Taema\Youtubegallery\Controllers\Videos;
+use Individuart\Videogallery\Controllers\Videos;
 
 /**
  * Class VideosTest
  *
- * @package taema\youtubegallery\tests\controllers
+ * @package individuart\videogallery\tests\controllers
  *
- * @author Mathieu Tanguay <mathieu.tanguay@taema.ca>
- * @copyright Taema Inc.
  */
 class VideosTest extends PluginTestCase
 {

@@ -1,6 +1,8 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('taema/youtubegallery/videos') ?>"><?= e(trans('taema.youtubegallery::lang.plugin.controllers.videos.breadcrumbs')) ?></a></li>
+        <li>
+            <a href="<?= Backend::url('individuart/videogallery/videos') ?>"><?= e(trans('individuart.videogallery::lang.plugin.controllers.videos.breadcrumbs')) ?></a>
+        </li>
         <li><?= e($this->pageTitle) ?></li>
     </ul>
 <?php Block::endPut() ?>
@@ -24,7 +26,7 @@
                     data-hotkey="ctrl+s, cmd+s"
                     data-load-indicator="Creating video..."
                     class="btn btn-primary">
-                    <?= e(trans('taema.youtubegallery::lang.common.create')) ?>
+                    <?= e(trans('individuart.videogallery::lang.common.create')) ?>
                 </button>
                 <button
                     type="button"
@@ -33,10 +35,11 @@
                     data-hotkey="ctrl+enter, cmd+enter"
                     data-load-indicator="Creating video..."
                     class="btn btn-default">
-                    <?= e(trans('taema.youtubegallery::lang.common.create_and_close')) ?>
+                    <?= e(trans('individuart.videogallery::lang.common.create_and_close')) ?>
                 </button>
                 <span class="btn-text">
-                    or <a href="<?= Backend::url('taema/youtubegallery/videos') ?>"><?= e(trans('taema.youtubegallery::lang.common.cancel')) ?></a>
+                    or <a
+                        href="<?= Backend::url('individuart/videogallery/videos') ?>"><?= e(trans('individuart.videogallery::lang.common.cancel')) ?></a>
                 </span>
             </div>
         </div>
@@ -46,6 +49,8 @@
 <?php else: ?>
 
     <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('taema/youtubegallery/videos') ?>" class="btn btn-default"><?= e(trans('taema.youtubegallery::lang.plugin.controllers.videos.create.return')) ?></a></p>
+<p><a href="<?= Backend::url('individuart/videogallery/videos') ?>"
+      class="btn btn-default"><?= e(trans('individuart.videogallery::lang.plugin.controllers.videos.create.return')) ?></a>
+</p>
 
 <?php endif ?>

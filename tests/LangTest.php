@@ -1,14 +1,12 @@
 <?php
 
-namespace taema\youtubegallery\tests;
+namespace individuart\videogallery\tests;
 
 /**
  * Class LangTest
  *
- * @package taema\youtubegallery\tests
+ * @package individuart\videogallery\tests
  *
- * @author Mathieu Tanguay <mathieu.tanguay@taema.ca>
- * @copyright Taema Inc.
  */
 class LangTest extends \PHPUnit_Framework_TestCase
 {

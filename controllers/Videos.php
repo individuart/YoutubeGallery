@@ -1,6 +1,6 @@
 <?php
 
-namespace Taema\Youtubegallery\Controllers;
+namespace Individuart\Videogallery\Controllers;
 
 use BackendMenu;
 use Backend\Classes\Controller;
@@ -24,6 +24,6 @@ class Videos extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Taema.Youtubegallery', 'youtubegallery', 'videos');
+        BackendMenu::setContext('Individuart.Videogallery', 'videogallery', 'videos');
     }
 }

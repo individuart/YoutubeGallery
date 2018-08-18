@@ -8,17 +8,31 @@ fields:
         disabled: true
         span: left
     title:
-        label: taema.youtubegallery::lang.plugin.models.video.fields.title
+        label: individuart.videogallery::lang.plugin.models.video.fields.title
         span: left
     yt_watch:
-        label: taema.youtubegallery::lang.plugin.models.video.fields.yt_watch
+        label: individuart.videogallery::lang.plugin.models.video.fields.yt_watch
         span: left
+    idvideo:
+        label: individuart.videogallery::lang.plugin.models.video.fields.idvideo
+        span: left
+    video_type:
+        label: individuart.videogallery::lang.plugin.models.video.fields.video_type
+        span: left
+        type: dropdown
+    video_image:
+      label: image
+      type: fileupload
+      mode: image
+      imageWidth: 600
+      imageHeight: 380
+      useCaption: true
     order:
-        label: taema.youtubegallery::lang.plugin.models.video.fields.order
+        label: individuart.videogallery::lang.plugin.models.video.fields.order
         type: number
         span: left
         default: 50
     published:
-        label: taema.youtubegallery::lang.plugin.models.video.fields.published
+        label: individuart.videogallery::lang.plugin.models.video.fields.published
         type: switch
         default: true

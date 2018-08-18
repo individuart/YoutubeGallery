@@ -1,12 +1,12 @@
 <?php
 
-namespace Taema\Youtubegallery;
+namespace Individuart\Videogallery;
 
 use Backend;
 use System\Classes\PluginBase;
 
 /**
- * youtubegallery Plugin Information File
+ * videogallery Plugin Information File
  */
 class Plugin extends PluginBase
 {
@@ -18,9 +18,9 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'YouTube Video Gallery',
-            'description' => 'Make galleries out of YouTube videos instead of pictures',
-            'author'      => 'Taema Inc.',
+            'name' => 'October Video Gallery',
+            'description' => 'Make galleries out of YouTube and Vimeo videos',
+            'author' => 'Individuart fork from lunfel',
             'icon'        => 'icon-youtube-play'
         ];
     }
@@ -33,7 +33,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Taema\Youtubegallery\Components\SinglePlaylist' => 'Playlist',
+            'Individuart\Videogallery\Components\SinglePlaylist' => 'Playlist',
         ];
     }
 
@@ -47,15 +47,15 @@ class Plugin extends PluginBase
         $tab = 'YouTube Video Gallery';
 
         return [
-            'taema.youtubegallery.tab' => [
+            'individuart.videogallery.tab' => [
                 'label' => 'Show the YouTube Video Gallery tab in the backend',
                 'tab' => $tab
             ],
-            'taema.youtubegallery.access_videos' => [
+            'individuart.videogallery.access_videos' => [
                 'label' => 'Access to the video section',
                 'tab' => $tab
             ],
-            'taema.youtubegallery.access_playlists' => [
+            'individuart.videogallery.access_playlists' => [
                 'label' => 'Access to the playlist section',
                 'tab' => $tab
             ]
@@ -70,24 +70,24 @@ class Plugin extends PluginBase
     public function registerNavigation()
     {
         return [
-            'youtubegallery' => [
-                'label'       => 'taema.youtubegallery::lang.plugin.navigation.label',
-                'url'         => Backend::url('taema/youtubegallery/videos'),
+            'videogallery' => [
+                'label' => 'individuart.videogallery::lang.plugin.navigation.label',
+                'url' => Backend::url('individuart/videogallery/videos'),
                 'icon'        => 'icon-youtube-play',
-                'permissions' => ['taema.youtubegallery.tab'],
+                'permissions' => ['individuart.videogallery.tab'],
                 'order'       => 500,
                 'sideMenu' => [
                     'videos' => [
-                        'label' => 'taema.youtubegallery::lang.plugin.navigation.sidemenu.videos.label',
+                        'label' => 'individuart.videogallery::lang.plugin.navigation.sidemenu.videos.label',
                         'icon' => 'icon-video-camera',
-                        'url' => Backend::url('taema/youtubegallery/videos'),
-                        'permissions' => ['taema.youtubegallery.access_videos']
+                        'url' => Backend::url('individuart/videogallery/videos'),
+                        'permissions' => ['individuart.videogallery.access_videos']
                     ],
                     'playlists' => [
-                        'label' => 'taema.youtubegallery::lang.plugin.navigation.sidemenu.playlists.label',
+                        'label' => 'individuart.videogallery::lang.plugin.navigation.sidemenu.playlists.label',
                         'icon' => 'icon-list',
-                        'url' => Backend::url('taema/youtubegallery/playlists'),
-                        'permissions' => ['taema.youtubegallery.access_playlists']
+                        'url' => Backend::url('individuart/videogallery/playlists'),
+                        'permissions' => ['individuart.videogallery.access_playlists']
                     ]
                 ]
             ],

@@ -1,4 +1,4 @@
-<?php namespace Taema\Youtubegallery\Models;
+<?php namespace Individuart\Videogallery\Models;
 
 use Model;
 use October\Rain\Database\Traits\Validation;
@@ -16,7 +16,7 @@ class Playlist extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'taema_youtubegallery_playlists';
+    public $table = 'individuart_videogallery_playlists';
 
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 
@@ -37,7 +37,7 @@ class Playlist extends Model
     ];
 
     public $attributeNames = [
-        'name' => 'taema.youtubegallery::lang.plugin.models.playlist.attributes.name',
+        'name' => 'individuart.videogallery::lang.plugin.models.playlist.attributes.name',
     ];
 
     /**
@@ -49,11 +49,11 @@ class Playlist extends Model
     public $belongsToMany = [
         'videos' => [
             Video::class,
-            'table' => 'taema_youtubegallery_playlist_video'
+            'table' => 'individuart_videogallery_playlist_video'
         ],
         'videos_count' => [
             Video::class,
-            'table' => 'taema_youtubegallery_playlist_video',
+            'table' => 'individuart_videogallery_playlist_video',
             'count' => true
         ]
     ];

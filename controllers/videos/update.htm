@@ -1,6 +1,8 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('taema/youtubegallery/videos') ?>"><?= e(trans('taema.youtubegallery::lang.plugin.controllers.videos.breadcrumbs')) ?></a></li>
+        <li>
+            <a href="<?= Backend::url('individuart/videogallery/videos') ?>"><?= e(trans('individuart.videogallery::lang.plugin.controllers.videos.breadcrumbs')) ?></a>
+        </li>
         <li><?= e($this->pageTitle) ?></li>
     </ul>
 <?php Block::endPut() ?>
@@ -26,7 +28,7 @@
                     data-hotkey="ctrl+s, cmd+s"
                     data-load-indicator="Saving video..."
                     class="btn btn-primary">
-                    <?= e(trans('taema.youtubegallery::lang.common.save')) ?>
+                    <?= e(trans('individuart.videogallery::lang.common.save')) ?>
                 </button>
                 <button
                     type="button"
@@ -35,7 +37,7 @@
                     data-hotkey="ctrl+enter, cmd+enter"
                     data-load-indicator="Saving video..."
                     class="btn btn-default">
-                    <?= e(trans('taema.youtubegallery::lang.common.save_and_close')) ?>
+                    <?= e(trans('individuart.videogallery::lang.common.save_and_close')) ?>
                 </button>
                 <button
                     type="button"
@@ -45,7 +47,8 @@
                     data-request-confirm="Delete this video?">
                 </button>
                 <span class="btn-text">
-                    or <a href="<?= Backend::url('taema/youtubegallery/videos') ?>"><?= e(trans('taema.youtubegallery::lang.common.cancel')) ?></a>
+                    or <a
+                        href="<?= Backend::url('individuart/videogallery/videos') ?>"><?= e(trans('individuart.videogallery::lang.common.cancel')) ?></a>
                 </span>
             </div>
         </div>
@@ -55,6 +58,8 @@
 <?php else: ?>
 
     <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('taema/youtubegallery/videos') ?>" class="btn btn-default"><?= e(trans('taema.youtubegallery::lang.plugin.controllers.videos.create.return')) ?></a></p>
+<p><a href="<?= Backend::url('individuart/videogallery/videos') ?>"
+      class="btn btn-default"><?= e(trans('individuart.videogallery::lang.plugin.controllers.videos.create.return')) ?></a>
+</p>
 
 <?php endif ?>
