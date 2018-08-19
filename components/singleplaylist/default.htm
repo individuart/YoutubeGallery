@@ -1,26 +1,42 @@
 {% if __SELF__.hasError %}
     {% partial '@error' message="Video gallery is unavailable" %}
 {% else %}
-{% if __SELF__.property('display_playlist_name') %}
+<div class="container">
+    {% if __SELF__.property('display_playlist_name') %}
     <div class="row">
-        <div class="col-sm-12 text-center" style="padding-bottom: 30px">
+        <div class="col s12 text-center" style="padding-bottom: 30px">
             <h2 class="playlist-name">{{ __SELF__.name }}</h2>
         </div>
     </div>
     {% endif %}
-    {% for row in __SELF__.videos | batch(2) %}
     <div class="row">
-        {% for video in row %}
-        <div class="col-sm-6">
-            <div class="videoTitle">
-                {% if __SELF__.property('display_title') %}
-                <h3>{{ video.title }}</h3>
-                {% endif %}
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/{{ video.yt_watch }}" allowfullscreen></iframe>
+        {% for video in __SELF__.videos %}
+        <div class="col s12 m6 l3">
+            {% if video.video_type==1 %}
+            {% set videoUrl = 'https://youtube.com/watch?v='~video.idvideo %}
+            {% else %}
+            {% set videoUrl = 'https://vimeo.com/'~video.idvideo %}
+            {% endif %}
+            <div class="card hoverable">
+                <div class="card-image card--video">
+                    <a class="venobox" data-vbtype="video" href="{{videoUrl}}">
+                        {% if video.video_image is not empty %}
+                        <img class="responsive-img" src="{{video.video_image.getThumb(350, 250, 'crop')}}" alt="">
+                        {%else%}
+                        <img class="responsive-img"
+                             src="/plugins/individuart/videogallery/components/assets/img/placeholder-video.gif" alt="">
+                        {% endif %}
+                    </a>
+                </div>
+                <div class="card-action center-align">
+                    {% if __SELF__.property('display_title') %}
+                    <a class="venobox blue-text" data-vbtype="video" href="{{videoUrl}}">{{ video.title }}</a>
+                    {% endif %}
+                </div>
             </div>
         </div>
         {% endfor %}
     </div>
 
-    {% endfor %}
+</div>
 {% endif %}

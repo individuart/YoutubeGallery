@@ -82,6 +82,12 @@ class SinglePlaylist extends ComponentBase
 
     public function onRun()
     {
+        $this->addJs('components/assets/js/venobox.min.js');
+        $this->addJs('components/assets/js/singleplaylist.js');
+        $this->assetPath = env('DOCUMENT_ROOT') . '/plugins/individuart/videogallery/';
+        $this->addCss(['components/assets/scss/venobox.scss']);
+
+
         $playlist = Playlist::find($this->property('playlist'));
         if ($playlist) {
             $this->name = $playlist->name;
