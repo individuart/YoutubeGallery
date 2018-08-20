@@ -1,5 +1,6 @@
+{% set videos = __SELF__.videos%}
 {% if __SELF__.hasError %}
-    {% partial '@error' message="Video gallery is unavailable" %}
+{% partial '@error' message="Video gallery is unavailable" %}
 {% else %}
 <div class="container">
     {% if __SELF__.property('display_playlist_name') %}
@@ -10,7 +11,7 @@
     </div>
     {% endif %}
     <div class="row">
-        {% for video in __SELF__.videos %}
+        {% for video in videos %}
         <div class="col s12 m6 l3">
             {% if video.video_type==1 %}
             {% set videoUrl = 'https://youtube.com/watch?v='~video.idvideo %}
@@ -39,4 +40,21 @@
     </div>
 
 </div>
+{% endif %}
+{% if videos.lastPage > 1 %}
+<ul class="pagination">
+    {% if videos.currentPage > 1 %}
+    <li><a href="{{ this.page.baseFileName|page({ (pageParam): (videos.currentPage-1) }) }}">&larr; Anteriores</a></li>
+    {% endif %}
+
+    {% for page in 1..videos.lastPage %}
+    <li class="{{ videos.currentPage == page ? 'active' : null }}">
+        <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+    </li>
+    {% endfor %}
+
+    {% if videos.lastPage > videos.currentPage %}
+    <li><a href="{{ this.page.baseFileName|page({ (pageParam): (videos.currentPage+1) }) }}">Siguientes &rarr;</a></li>
+    {% endif %}
+</ul>
 {% endif %}

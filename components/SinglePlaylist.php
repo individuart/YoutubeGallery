@@ -32,6 +32,12 @@ class SinglePlaylist extends ComponentBase
                 'type' => 'dropdown',
                 'required' => true
             ],
+            'pageNumber' => [
+                'title' => 'Page number param',
+                'description' => 'This value is used to determine what page the user is on',
+                'type' => 'string',
+                'default' => '{{ :page }}',
+            ],
             'display_title' => [
                 'title' => 'Display title',
                 'description' => 'Add the provided display title on top of the video',
@@ -66,7 +72,14 @@ class SinglePlaylist extends ComponentBase
                     'asc' => 'Ascending',
                     'desc' => 'Descending'
                 ]
-            ]
+            ],
+            'videosPerPage' => [
+                'title' => 'videos per page',
+                'type' => 'string',
+                'validationPattern' => '^[0-9]+$',
+                'validationMessage' => 'Invalid format of the posts per page value',
+                'default' => '10',
+            ],
         ];
     }
 
@@ -86,7 +99,9 @@ class SinglePlaylist extends ComponentBase
         $this->addJs('components/assets/js/singleplaylist.js');
         $this->assetPath = env('DOCUMENT_ROOT') . '/plugins/individuart/videogallery/';
         $this->addCss(['components/assets/scss/venobox.scss']);
-
+        $videosPerPage = $this->property('videosPerPage');
+        $pageToShow = ($this->param('page'));
+        $this->pageParam = $this->page['pageParam'] = $this->paramName('pageNumber');
 
         $playlist = Playlist::find($this->property('playlist'));
         if ($playlist) {
@@ -94,7 +109,7 @@ class SinglePlaylist extends ComponentBase
             $this->videos = $playlist->videos()->where('published', true)->orderBy(
                 $this->property('sort_by'),
                 $this->property('sort_direction')
-            )->get();
+            )->paginate($videosPerPage, $pageToShow);
             return;
         }
 
