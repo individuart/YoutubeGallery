@@ -2,8 +2,6 @@
 ## This is a simple OctoberCMS plugin to display YouTube and Vimeo videos on a web page
 
 
-Do you know Materialize CSS?
-
 With this plugin you can insert Youtube and Vimeo videos from backend and show them in playlists in the fromtend.
 
 The videos are shown in a popup window using [VENOBOX](http://http://veno.es/venobox/) Jquery Plugin .
