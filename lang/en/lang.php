@@ -64,6 +64,7 @@ return [
                     'title' => 'Title',
                     'yt_watch' => 'YouTube video ID',
                     'published' => 'Published',
+                    'published_date' => 'Published date',
                     'order' => 'Order'
                 ],
                 'fields' => [

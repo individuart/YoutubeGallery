@@ -70,6 +70,7 @@ return [
                     'title' => 'Titre du vidéo',
                     'yt_watch' => 'ID vidéo YouTube',
                     'published' => 'Publiée',
+                    'published_date' => 'Publiée',
                     'order' => 'Video display priority in playlists'
                 ],
                 'attributes' => [
