@@ -29,7 +29,7 @@ class Video extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = ['title', 'idvideo', 'published'];
+    protected $fillable = ['title', 'idvideo', 'published', 'yt_watch', 'video_type'];
 
     public $rules = [
         'title' => 'required',

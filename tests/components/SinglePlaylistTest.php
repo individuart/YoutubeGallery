@@ -27,7 +27,10 @@ class SinglePlaylistTest extends PluginTestCase
         $this->video = Video::create([
             'title' => 'Final Fantasy VI',
             'yt_watch' => 'sAyb0Arwy8g',
-            'published' => true
+            'idvideo' => 'TestVideo',
+            'video_type' => 1,
+            'published' => true,
+            'order' => 1,
         ]);
 
         /** @var Playlist $playlist */

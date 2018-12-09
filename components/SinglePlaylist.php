@@ -100,7 +100,10 @@ class SinglePlaylist extends ComponentBase
         $this->assetPath = env('DOCUMENT_ROOT') . '/plugins/individuart/videogallery/';
         $this->addCss(['components/assets/scss/venobox.scss']);
         $videosPerPage = $this->property('videosPerPage');
-        $pageToShow = ($this->param('page'));
+        $pageToShow = 1;
+        if($this->page && $this->page->param('page')){
+            $pageToShow = $this->page->param('page');
+        }
         $this->pageParam = $this->page['pageParam'] = $this->paramName('pageNumber');
 
         $playlist = Playlist::find($this->property('playlist'));
